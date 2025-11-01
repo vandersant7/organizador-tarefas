@@ -1,7 +1,7 @@
 ﻿# 🗂️ Organizador de Tarefas
 
 API desenvolvida em **.NET 9 (Minimal API)** para gerenciar tarefas, com suporte a CRUD completo, DTOs, filtragem por status, data e título.  
-Projeto mantido por [Vander Santana](https://github.com/vandersant7) e em constante evolução para se tornar uma aplicação completa com **frontend, CI/CD e banco de dados robusto**.
+Projeto mantido por [Evandro Santos](https://github.com/vandersant7) e em constante evolução para se tornar uma aplicação completa com **frontend, CI/CD e banco de dados robusto**.
 
 ---
 
