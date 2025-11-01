@@ -20,6 +20,7 @@ Console.WriteLine($"Banco de dados em uso: {connectionString}");
 builder.Services.AddDbContext<TarefaContext>(options =>
     options.UseSqlite(connectionString));
 
+
 // === SWAGGER ===
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
