@@ -1,0 +1,41 @@
+﻿# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Rider / VSCode / JetBrains
+.idea/
+*.iml
+.vscode/
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+
+# Publish output
+wwwroot/
+publish/
+dist/
+
+# Environment and secrets
+.env
+secrets.json
+
+# Migration snapshots (optional)
+Migrations/obj/
