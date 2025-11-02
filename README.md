@@ -110,7 +110,7 @@ classDiagram
 
     ITarefaService <|.. TarefaService
     TarefaService --> Tarefa
-
+```
 ---
 
 ## 📚 Endpoints
