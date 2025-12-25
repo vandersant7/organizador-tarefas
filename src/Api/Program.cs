@@ -10,16 +10,19 @@ using OrganizadorTarefa.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+    .AddEnvironmentVariables();
+
+// var connectionString = $"Data Source={Path.Combine(AppContext.BaseDirectory, "tarefas.db")}";
+// Console.WriteLine($"Banco de dados em uso: {connectionString}");
+
+builder.Services.AddDbContext<TarefaContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 builder.Services.AddTransient<ITarefaService, TarefaService>();
-
-var connectionString = $"Data Source={Path.Combine(AppContext.BaseDirectory, "tarefas.db")}";
-Console.WriteLine($"Banco de dados em uso: {connectionString}");
-
-builder.Services.AddDbContext<TarefaContext>(options =>
-    options.UseSqlite(connectionString));
-
 
 // === SWAGGER ===
 builder.Services.AddEndpointsApiExplorer();
@@ -46,8 +49,6 @@ if (app.Environment.IsDevelopment())
 using var scope = app.Services.CreateScope();
 var db = scope.ServiceProvider.GetRequiredService<TarefaContext>();
 db.Database.Migrate();
-
 // Mapear endpoints de Tarefa
 app.MapTarefaEndpoints();
 
-app.Run();
