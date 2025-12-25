@@ -42,7 +42,7 @@ OrganizadorTarefa/
 ├── appsettings.json
 ├── Program.cs
 └── README.md
-````
+```
 
 ---
 
@@ -133,8 +133,8 @@ classDiagram
 | Etapa | Descrição                                                      | Status             |
 | ----- | -------------------------------------------------------------- | ------------------ |
 | 🧱 1  | Reestruturar pastas para padrão `src/`, `tests/` e `frontend/` | 🔄 Em planejamento |
-| 🐘 2  | Migrar banco de dados de SQLite para PostgreSQL                | ⏳ Pendente         |
-| 🧰 3  | Adicionar containerização com Docker e docker-compose          | ⏳ Pendente         |
+| 🐘 2  | Migrar banco de dados de SQLite para PostgreSQL                | ✅ Concluido         |
+| 🧰 3  | Adicionar containerização com Docker e docker-compose          | ✅ Concluido         |
 | ⚙️ 4  | Criar pipeline de CI/CD com GitHub Actions                     | ⏳ Pendente         |
 | 💻 5  | Implementar frontend (React ou Blazor)                         | ⏳ Pendente         |
 | 🧪 6  | Adicionar testes unitários e de integração                     | ⏳ Pendente         |
