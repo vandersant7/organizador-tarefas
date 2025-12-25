@@ -1,0 +1,41 @@
+
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    container_name: organizador_api_prod
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=${DB_HOST};Port=${DB_PORT};Database=${DB_NAME};Username=${DB_USER};Password=${DB_PASSWORD}
+    depends_on:
+      - db
+    networks:
+      - organizador_net
+
+  db:
+    image: postgres:16
+    container_name: organizador_db_prod
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_prod:/var/lib/postgresql/data
+    networks:
+      - organizador_net
+
+networks:
+  organizador_net:
+
+volumes:
+  pgdata_prod:
